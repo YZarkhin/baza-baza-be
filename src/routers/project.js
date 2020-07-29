@@ -5,7 +5,7 @@ var Project = require('../db/Models/Project')
 router.get('/', function (req, res) {
   Project.find((err, response) => res.send(response))
 })
-// define the about route
+
 router.post('/', function (req, res) {
   const {
     name,
@@ -46,7 +46,7 @@ router.put('/:id', function (req, res) {
 
 
 router.delete('/:id', function (req, res) {
-  Project.findByIdAndDelete(id, function (err) {
+  Project.findByIdAndDelete(req.params.id, function (err) {
     res.send('Deleted')
   })
 })

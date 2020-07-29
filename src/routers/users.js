@@ -38,7 +38,7 @@ router.put('/:id', function (req, res) {
 
 
 router.delete('/:id', function (req, res) {
-  Users.findByIdAndDelete(id, function (err) {
+  Users.findByIdAndDelete(req.params.id, function (err) {
     res.send('Deleted')
   })
 })

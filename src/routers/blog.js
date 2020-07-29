@@ -22,7 +22,7 @@ router.put('/:id', function (req, res) {
 
 
 router.delete('/:id', function (req, res) {
-  Blog.findByIdAndDelete(id, function (err) {
+  Blog.findByIdAndDelete(req.params.id, function (err) {
     res.send('Deleted')
   })
 })

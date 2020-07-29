@@ -42,7 +42,7 @@ router.put('/:id', function (req, res) {
 
 
 router.delete('/:id', function (req, res) {
-  Team.findByIdAndDelete(id, function (err) {
+  Team.findByIdAndDelete(req.params.id, function (err) {
     res.send('Deleted')
   })
 })
